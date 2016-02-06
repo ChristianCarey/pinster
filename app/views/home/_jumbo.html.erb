@@ -1,19 +1,11 @@
 <div class="jumbotron center">
     
-    <% if user_signed_in?%>
-        <h1>Hello, <%= current_user.name %></h1>
-
-        <p>Let's get pinning.</p>
-        <%= link_to "List Pins", pins_path, class: "btn btn-default" %>
-        <%= link_to "Add Pin", new_pin_path, class: "btn btn-primary" %>
-    <% else %>
         <h1>Welcome to Pinster</h1>
 
         <p>Let's get pinning.</p>
         
-        <%= link_to "Login", new_user_session_path, class: "btn btn-default" %>
-        <%= link_to "Join", new_user_registration_path, class: "btn btn-primary" %>
-    <% end %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %>
+        <%= link_to "Join", new_user_registration_path, class: "btn btn-primary btn-lg" %>
     
 </div>
 
