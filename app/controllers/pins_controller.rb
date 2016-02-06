@@ -1,7 +1,7 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index, :show]
+  # before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /pins
   # GET /pins.json
@@ -39,7 +39,7 @@ class PinsController < ApplicationController
   # PATCH/PUT /pins/1.json
   def update
     if @pin.update(pin_params)
-      redirect_to @pin, notice: 'Pin was updated created.'
+      redirect_to @pin, notice: 'Pin was updated.'
     else
       render action: 'edit'
     end
@@ -60,7 +60,7 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :name)
     end
 end
 
